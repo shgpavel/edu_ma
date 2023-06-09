@@ -1,0 +1,201 @@
+
+\begin{multline}
+    \text{1:}\\
+    \int \frac{dx}{\sin^{2}{x} \cos^{2}{x}}\\
+    \int \frac{dx}{\frac{1}{4} \cdot \sin^{2}{2x}}\\
+    t = 2x,\ dx = \frac{dt}{2}\\
+    2 \int \frac{dt}{\sin^{2}{t} } = -2\ctg{t} + C = -2\ctg{2x} + C\\
+\end{multline}
+
+\begin{multline}
+    \text{2:}\\
+    x(t) = \int_{1}^{t^{2}} t\ \ln{t}\ dt\\
+    y(t) = \int_{t^{2}}^{1} t^{2}\ \ln{t}\ dt\\
+    \frac{dy}{dt} \cdot \frac{dt}{dx} = \frac{dy}{dx}\\
+    \frac{dx}{dt} = \frac{d}{dt} \int_{1}^{t^2} {t \ln{t}}\ dt = 4t^{3} \ln{t}\\
+    \frac{dy}{dt} = \frac{d}{dt} \int_{t^2}^{1} {t^{2} \ln{t}}\ dt = -4t^{5} \ln{t}\\
+    \implies \frac{dy}{dx} = -t^{2}\\
+\end{multline}
+
+
+
+\begin{multline}
+    \text{3:}\\
+    \int_{-\ln{2}}^{0} \sqrt{1 - e^{2x}} dx\\
+    t = 1 - e^{2x},\ dt = -2e^{2x} dx,\ x = \frac{1}{2} \ln{(1-t)}\\
+    x = -\ln{2},\ t = \frac{3}{4},\ \ x = 0,\ t = 0\\
+    -\int_{0}^{3/4} \frac{\sqrt{t}}{-2e^{\ln{(1-t)}}} dt = \frac{1}{2} \int_{0}^{3/4} \frac{\sqrt{t}}{1 - t} dt\\
+    g = \sqrt{t},\ dg = \frac{dt}{2\sqrt{t}},\ t = g^{2}\\
+    \int \frac{2g^{2}}{-g^{2} + 1} dg = 2 \int -1 + \frac{1}{-g^{2} + 1} dg\\
+    a + b = 1,\ a - b = 0\ \implies\ a = b = 1/2\\
+    2 \int (\frac{1}{2(1 - g)} + \frac{1}{2(1 + g)} - 1) dg = 2(-g - \frac{1}{2} \ln{|1 - g|} + \frac{1}{2} \ln{|1 + g|}) + C\\
+    [-\sqrt{t} - \frac{1}{2} \ln{|1 - \sqrt{t}|} + \frac{1}{2} \ln{(1 + \sqrt{t})}]_{0}^{3/4} = \frac{-\sqrt{3}}{2} - \frac{1}{2} \ln{(1 - \frac{\sqrt{3}}{2})} + \frac{1}{2} \ln{(1 + \frac{\sqrt{3}}{2})}\\
+    = \frac{-\sqrt{3}}{2} + \frac{1}{2} \ln{(\frac{2 + \sqrt{3}}{2 - \sqrt{3}})} = \frac{-\sqrt{3}}{2} + \ln{(2 + \sqrt{3})}\\
+\end{multline}
+
+
+
+\begin{multline}
+    \text{4:}\\
+    \int_{-2}^{-1} \frac{x^{3} + 1}{x^{2}(1 - x)} dx\\
+    \int \frac{x^{3}}{x^{2}(1 - x)} dx + \int \frac{1}{x^{2}(1 - x)} dx\\
+    \int \frac{x}{1 - x} dx + \int \frac{1}{x^{2}(1 - x)} dx\\
+    \text{Рассмотрел}\ \int \frac{x}{1 - x} dx,\ t = 1 - x,\ dx = -dt\\
+    - \int \frac{1 - t}{t} dt = - \ln{|t|} + t - C =\\
+    1 - x - \ln{|1 - x|} - C = -x - \ln{|1 - x|} -C\\
+    \text{Теперь второй}\  \int \frac{1}{x^{2}(1 - x)} dx\\
+    \frac{1}{x^{2} (1 - x)} = \frac{a}{x} + \frac{b}{x^{2}} + \frac{c}{1 - x}\\
+    \frac{x}{x^{3} (1 - x)} = \frac{ax^{2} - ax^3}{x^{3} (1 - x)} + \frac{bx - bx^{2}}{x^{3} (1 - x)} + \frac{cx^3}{x^{3} (1 - x)}\\
+    0 = -a + c;\ 0 = a - b;\ 1 = b\ \implies a = c = 1\\
+    \int \frac{dx}{1 - x} + \int \frac{dx}{x} + \int \frac{dx}{x^{2}} = -\ln{|1 - x|} + \ln{x} - \frac{1}{x} + C\\
+    \text{Подставил}\ [-x - 2\ln{|1 - x|} + \ln{x} - \frac{1}{x}]_{-2}^{-1} =\\
+    (2 - 2\ln{2} + \ln{-1}) - (2.5 - 2\ln{3} + \ln{-2}) = -0.5 + 2\ln{\frac{3}{2}} + \ln{0.5} =\\
+    -0.5 + \ln{\frac{9}{4}} + \ln{0.5} = -0.5 + \ln{\frac{9}{8}}\\
+\end{multline}
+
+
+\begin{multline}
+    \text{5:}\\
+    \int_{\frac{1 - \sqrt{5}}{2}}^{1/2} (1 - 3x) \sqrt{1 + x - x^{2}}\ dx\ (1)\\
+    \sqrt{1 + x - x^{2}} = \sqrt{-(x - \frac{1}{2})^{2} + \frac{5}{4}}\\
+    \int (1 - 3x) \sqrt{-(x - \frac{1}{2})^{2} + \frac{5}{4}}\ dx\\
+    x - \frac{1}{2} = \frac{\sqrt{5}}{2} \sin{t},\ dx = \frac{\sqrt{5}}{2} \cos{t}\ dt\\
+    \frac{5}{4} \int (1 - 3(\frac{1}{2} + \frac{\sqrt{5}}{2} \sin{t})) \cos^{2}{t}\ dt\\
+    \frac{5}{4} \int (-\frac{1}{2} - 3\frac{\sqrt{5}}{2} \sin{t}) \cos^{2}{t}\ dt\\
+    -\frac{5}{8} \int \cos^{2}{t}\ dt - 15 \frac{\sqrt{5}}{8}
+    \int {\sin{t} \cos^{2}{t}\ dt}\\
+    -\frac{5}{8}(\frac{1}{2}t + \frac{\sin{2t}}{4}) - 
+    \frac{15\sqrt{5}}{8} \int \cos^{2}{t}\ d(\cos{t})\\
+    - \frac{5}{8}(\frac{1}{2}t + \frac{\sin{2t}}{4}) + 
+    \frac{5\sqrt{5}}{8} \cos^{3}{t} + C\\
+    t = \arcsin{\frac{2x - 1}{\sqrt{5}}}\\
+    x = \frac{1}{2},\ t = 0,\ x = \frac{1 - \sqrt{5}}{2},\ t = - \frac{\pi}{2}\\
+    \text{(1)} = \frac{5 \sqrt{5}}{8} - \frac{5 \pi}{32}\\
+\end{multline}
+
+
+\begin{multline}
+    \text{6:}\\
+    \int \frac{\cos{x}\ dx}{\sin{x} - 5\cos{x}}\\
+    t = \tg{x},\ dt = \sec^{2}{x} dx,\ x = \arctg{t}\\
+    \int \frac{\cos^{3}{(\arctg{t})}\ dt}{(\sin{(\arctg{t})} - 5\cos{(\arctg{t})})}\\
+    \int \frac{\frac{1}{(1 + t^2)\sqrt{1 + t^2}}}{\frac{t - 5}{\sqrt{1 + t^2}}}\ dt\\
+    \int \frac{dt}{(1 + t^2) (t - 5)} = \int (\frac{a}{t - 5} + \frac{bt + c}{t^2 + 1})\ dt\\
+    1 = a + at^2 + bt^2 - 5bt + ct - 5c,\ a = \frac{1}{26},\ b = -\frac{1}{26},\ c = -\frac{5}{26}\\
+    \frac{1}{26} \int (\frac{1}{t - 5} - \frac{t + 5}{t^2 + 1})\ dt\\
+    \frac{1}{26} (\ln{|t - 5|} - \frac{1}{2} \ln{(t^2 + 1)} - 5 \arctg{t}) + C\\
+    \frac{1}{26} (\ln{|\tg{x} - 5|} - \frac{1}{2} \ln{\sec^{2}{x}} - 5x) + C\\
+\end{multline}
+
+\begin{multline}
+    \text{7:}\\
+    \int_{2}^{+\infty} (\cos{\frac{2}{x}} - 1)\ dx\\
+    t = x - 2,\ dt = dx\\
+    \int_{0}^{+\infty} (\cos{\frac{2}{t + 2}} - 1)\ dt\\
+    t \to +\infty,\ \frac{2}{t + 2} \to 0\\
+    1 - \cos{\alpha} \sim \frac{\alpha^2}{2},\ \alpha \to 0\\
+    \cos{(\frac{2}{t + 2})} - 1 \sim -\frac{2}{(t + 2)^2} \sim -\frac{2}{t^2}\\
+    \implies\ \text{интеграл сходится}\\
+\end{multline}
+
+
+
+\begin{multline}
+    \text{8:}\\
+    \int_{0}^{1} \frac{2 - \sqrt[3]{x} - x^3}{\sqrt[5]{x^3}}\ dx\\
+    t = \sqrt[15]{x},\ dx = 15t^{14}\ dt\\
+    \int \frac{2 - t^{5} - t^{45}}{t^{9}}\ 15t^{14} dt\\
+    30 \int t^{5}\ dt - 15 \int t^{10}\ dt - 15 \int t^{50}\ dt\\
+    5t^6 - \frac{15}{11} t^{11} - \frac{15}{51} t^{51} + C\\
+    \sqrt[15]{1} = 1,\ \sqrt[15]{0} = 0\\
+    [5t^6 - \frac{15}{11} t^{11} - \frac{15}{51} t^{51}]_{0}^{1} =\\
+    = 5 - \frac{15}{11} - \frac{15}{51} = \frac{625}{187}\\
+\end{multline}
+
+
+\begin{multline}
+    \text{9:}\\
+    S = \frac{1}{2} \int_{t_0}^{t_1} (xy' - x'y)\ dt\\
+    x = \frac{1}{1 + t^2},\ y = \frac{t(1 - t^2)}{1 + t^2}\\
+    S = \frac{1}{2} \int_{-1}^{1} \frac{-t^4 - 4t^2 + 1}{(t^2 + 1)^3} + \frac{2t^2(1 - t^2)}{(t^2 + 1)^3} dt\\
+    \int \frac{-3t^4 - 2t^2 + 1}{(t^2 + 1)^3} dt = \frac{at^3 + bt^2 + ct + d}{(t^2 + 1)^2} + \int \frac{et + f}{t^2 + 1} dt\\
+    -3t^4 - 2t^2 + 1 = -at^4 + 3at^2 - 2bt^3 + 2bt - 3ct^2 + c - 4dt + et^5 + 2et^3 + et + ft^4 + 2ft^2 + f\\
+    t^5:\ e = 0\\
+    t^4:\ -a + f = -3\\
+    t^3:\ -2b + 2e = 0\\
+    t^2:\ 3a - 3c + 2f = -2\\
+    t:\ 2b - 4d + e = 0\\
+    t^0:\ c + f = 1\\
+    a = c = 2,\ b = d = e = 0,\ f = -1\\
+    \frac{2t^3 + 2t}{(t^2 + 1)^2} - \int \frac{dt}{t^2 + 1}\\
+    S = [\frac{t}{t^2 + 1} - \frac{1}{2} \arctan{t}]_{-1}^{1} =
+    1 - \frac{\pi}{4}\\
+    \text{9':}\\
+    \text{Исследование кривой:}\ x(t) = \frac{1}{1 + t^2},\ y(t) = \frac{t(1 - t^2)}{1 + t^2}\\
+    t^2 = \frac{1}{x} - 1,\ \to y(x) = x\sqrt{\frac{1}{x} - 1}(2 - \frac{1}{x})\\
+    y = 0,\ x = 0 \lor x = 1 \lor x = \frac{1}{2}\\
+    y' = \frac{-4x^2 + 2x + 1}{2x \sqrt{x - x^2}},\ y' = 0\ \text{if}\
+    x = \frac{1 + \sqrt{5}}{2} > \frac{1}{2}\\
+    \text{значит петля у кривой между}\ x = \frac{1}{2}\ \text{и}\ x = 1\\
+    S = [\frac{t}{t^2 + 1} - \frac{1}{2}\arctan{t}]_{\frac{1}{2}}^{1} = 
+    \frac{1}{2} - \frac{\pi}{8} - \frac{2}{5} + \frac{1}{2} \arctan{\frac{1}{2}} =\\
+    = \frac{1}{10} - \frac{\pi}{8} + \frac{1}{2} \arctan{\frac{1}{2}}\\
+\end{multline}
+
+
+\begin{multline}
+    \text{10:}\\
+    0 \leq x \leq \frac{9}{16},\ y = \sqrt{1 - x^2} + \arcsin{x}\\
+    l = \int_{x_0}^{x_1} \sqrt{1 + y'^2}\ dx\\
+    y' = \frac{\sqrt{1 - x^2}}{1 + x}\\
+    l = \int_{0}^{\frac{9}{16}} \sqrt{1 + \frac{1 - x^2}{(1 + x)^2}}\ dx = \\
+    \int_{0}^{\frac{9}{16}} \frac{\sqrt{2}}{\sqrt{1 + x}}\ dx = [\sqrt{2} \cdot 2\sqrt{1 + x}]_{0}^{\frac{9}{16}} =\\
+    \frac{5\sqrt{2}}{2} - 2\sqrt{2} = \frac{\sqrt{2}}{2}\\
+\end{multline}
+
+
+\begin{multline}
+    \text{11:}\\
+    S = 2\pi \int_{a}^{b} |y|\ dl,\ dl = \sqrt{1 + y'^2}\ dx,\ y' = -\frac{1}{e^x}\\
+    S = 2\pi \int_{0}^{+\infty} |e^{-x}| \sqrt{1 + \frac{1}{e^{2x}}}\ dx = \\
+    \text{$ e^{-x} $ неотрицательна на промежутке интегрирования};\ t = e^{-x}, dt = -e^{-x}\ dx\\
+    2\pi \int_{1}^{0} -\sqrt{t^2 + 1}\ dt = \pi [t\sqrt{(t^2 + 1)} + 
+    \ln{(|\sqrt{t^2 + 1} + t|)}]_{0}^{1} =\\
+    \pi(\sqrt{2} + \ln(1 + \sqrt{2}))\\
+\end{multline}
+
+
+
+\begin{multline}
+    \text{12:}\\
+    \sum\limits_{i=1}^n \frac{1}{n(n+1)(n+2)} =\\
+    a_n = \frac{1}{n(n+1)(n+2)} = \frac{1}{2n} - \frac{1}{n + 1} + \frac{1}{2(n + 2)}\\
+    = \frac{1}{4}(\cancel{2} - \cancel{2} + \frac{2}{3}) + \frac{1}{4} (1 - \frac{4}{3} + \frac{1}{2}) \ldots = \frac{1}{4} (1 - \frac{2}{3} + \frac{1}{2}) \ldots\\
+    S_n = \frac{1}{4}(1 - \frac{1}{2(n+2)} + \frac{1}{2(n + 3)}) = \frac{1}{4} (1 + 
+    \frac{1}{2(n + 2)(n + 3)}) = \frac{1}{4}\\
+    \text{Ряд сходится}\\
+\end{multline}
+
+
+\begin{multline}
+    \text{13:}\\
+    \sum\limits_{i=1}^n \frac{(-1)^n}{(2n + (-1)^n)^{\alpha}}\\
+    \text{По лейбницу:}\
+    \lim\limits_{n \to \infty} \frac{1}{(2n + (-1)^n)^{\alpha}} \sim
+    \lim\limits_{n \to \infty}\frac{1}{2n^{\alpha}}\
+    \text{ряд сходится при}\ \alpha > 1\\
+    \text{Ряд из модулей:}\
+    |a_n| = \frac{1}{(2n + (-1)^n)^{\alpha}} \sim \frac{1}{2n^{\alpha}}\
+    \text{сходится при}\ \alpha > 1,\ \alpha \leq 1\ \text{-- расходится}\\
+    \text{Тогда исх. ряд при}\ \alpha > 1\ \text{-- сходится абсолютно}\\
+    \text{Рассмотрю}\ a_{2n} + a_{2n - 1} = 
+    \frac{1}{(4n + 1)^{\alpha}} - \frac{1}{(4n - 3)^{\alpha}} =\\
+    = \frac{(4n - 3)^{\alpha} - (4n + 1)^{\alpha}}{(4n + 1)^{\alpha}(4n - 3)^{\alpha}} =
+    \frac{4n^{\alpha}(1 - \frac{3}{4n})^{\alpha} - 4n^{\alpha}(1 + \frac{1}{4n})^{\alpha}}
+    {4^{2\alpha}(1 + \frac{1}{4n})^{\alpha}(1 - \frac{3}{4n})^{\alpha}} =\\
+    = \frac{(1 - \frac{3\alpha}{4n} + \mathcal{O}(\frac{1}{n^2})) - (1 + \frac{\alpha}{4n})}
+    {4n^{\alpha}(1 - \frac{3\alpha}{4n} + \mathcal{O}(\frac{1}{n^2}))\cdot (1 + \frac{\alpha}{4n})}
+    \sim \frac{-\alpha}{4n^{\alpha + 1}},\ \text{ряд расходится при}\ \alpha \leq 0\\
+\end{multline}
+
+
