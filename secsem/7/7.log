@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.6)  16 JUN 2023 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.1)  4 JUL 2023 13:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**1.tex
-(./1.tex
+**7.tex
+(./7.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -319,21 +319,35 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 Package: babel 2023/02/13 3.86 The Babel package
 \babel@savecnt=\count272
 \U@D=\dimen152
-\l@unhyphenated=\language87
+\l@unhyphenated=\language3
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count273
  (/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
-Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language21). Reported on input line 105.
-Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language21). Reported on input line 108.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
 ) (/usr/share/texmf-dist/tex/generic/babel-russian/russianb.ldf
 File: russianb.ldf 2021/01/10 1.3m Russian support for the Babel system
 Language: russian 2020/09/09 1.3k Russian support for the Babel system
+
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language 'Russian' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 32.
+
+Package babel Info: Hyphen rules for 'russian' set to \l@english
+(babel)             (\language0). Reported on input line 33.
 Package babel Info: Making " an active character on input line 124.
 Package babel Info: Default for \cyrdash is provided on input line 163.
 )) (/usr/share/texmf-dist/tex/generic/babel/locale/ru/babel-russian.tex
@@ -365,8 +379,8 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count277
 \l__pdf_internal_box=\box53
-) (./1.aux)
-\openout1 = `1.aux'.
+) (./7.aux)
+\openout1 = `7.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -445,19 +459,19 @@ LaTeX Info: Redefining \th on input line 11.
 <int0.png, id=16, 1405.25pt x 920.43875pt>
 File: int0.png Graphic file (type png)
 <use int0.png>
-Package pdftex.def Info: int0.png  used on input line 95.
+Package pdftex.def Info: int0.png  used on input line 96.
 (pdftex.def)             Requested size: 398.33858pt x 260.90926pt.
- [2 <./int0.png>] (./1.aux) ) 
+ [2 <./int0.png>] (./7.aux) ) 
 Here is how much of TeX's memory you used:
- 4564 strings out of 476025
- 70814 string characters out of 5796533
+ 4567 strings out of 477985
+ 70843 string characters out of 5840059
  1860388 words of memory out of 5000000
- 24988 multiletter control sequences out of 15000+600000
+ 24738 multiletter control sequences out of 15000+600000
  517603 words of font info for 40 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 57i,8n,62p,243b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 14 hyphenation exceptions out of 8191
+ 57i,8n,62p,243b,243s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on 1.pdf (2 pages, 425601 bytes).
+Output written on 7.pdf (2 pages, 425629 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
