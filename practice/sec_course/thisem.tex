@@ -21,6 +21,7 @@
 \usepackage{amssymb}
 \usepackage{ragged2e}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 
 \usepackage{setspace}
@@ -34,12 +35,22 @@
 \begin{document}
 
 \text{\textbf{14.} Исследовать на равномерную сходимость}\
-$ \sum\limits_{n = 1}^{\infty} \frac{e^{-n^{2} x^{2}}}{n^{2}} $
+$ \sum\limits_{n = 1}^{\infty} \frac{e^{-n^2 x^2}}{n^2} $
 \text{на} $ \mathbb{R}.$
+
+$ \left| \frac{e^{-n^{2} x^{2}}}{n^2} \right| \leq \frac{1}{n^2} $
+\text{т. к.} 
+$ \sum\limits_{n = 1}^{\infty} \frac{1}{n^2} $
+\text{сходится на}\ $ \mathbb{R}, $ 
+\text{то исходный ряд}
+
+\text{по признаку Вейерштрасса равномерно сходится на}\
+$ \mathbb{R}. $
 
 \text{\textbf{15.} Разложить в ряд Тейлора функцию}\
 $ \pi + \int\limits_{\frac{\pi}{2}}^{x} \frac{\cos{t}^2}{t - \frac{\pi}{2}}\ dt $
-\text{в окрестности точки}\ $ x_0 = \frac{\pi}{2} $\\
+\text{в окрестности точки}\ $ x_0 = \frac{\pi}{2} $
+\indent
 \text{и найти радиус сходимости полученного ряда.}
 
 \text{\textbf{1.} Найти пределы}\
@@ -122,6 +133,21 @@ $ \mathcal{H} = \begin{vmatrix}
 $ \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} $
 \text{преобразовать к полярным координатам.}
 
+\text{\textbf{5.} Исследовать на равномерную сходимость интеграл}\
+$ \int\limits_{1}^{+\infty} \frac{\ln^{3}{x}}{x^2 + \alpha^4} dx $
+\text{на множестве}\ $ \mathbb{R}. $
+
+$ \left| \frac{\ln^3{x}}{x^2 + \alpha^4} \right| \leq \frac{1}{x^{\frac{3}{2}}}, $
+\text{т. к.}\ $ \lim\limits_{x \to \infty} {\frac{(\ln^3{x}) x^{\frac{3}{2}}}
+{x^2 + \alpha^4}} = \lim\limits_{x \to \infty} {\frac{\ln^3{x}}{\sqrt{x}}} $
+$ = \lim\limits_{x \to \infty} {\frac{6\ln^2{x}}{\sqrt{x}}} = \ldots  = 0. $
+
+\text{По признаку Вейерштрасса т. к.}\
+$ \int\limits_{1}^{+\infty} \frac{1}{x^{\frac{3}{2}}} dx $
+\text{-- сходится}
+$ \to $ \text{исходный интеграл}\\
+\indent
+\text{равномерно сходится на}\ $ \mathbb{R}. $
 
 \text{\textbf{6.} В двойном интеграле}\
 $ \iint\limits_{\mathbb{D}} f(x,y)\ dx dy $
@@ -133,12 +159,14 @@ $ \begin{tikzpicture}
   \begin{axis}[axis equal, axis lines=middle, xlabel={$x$}, ylabel={$y$}, domain=-1.2:1.2, samples=100]
     \addplot[draw=black, thick, fill=none, draw opacity=1, domain=0:360] ({cos(x)}, {sin(x)});
     \addplot[domain=-0.6:1, color=black] {1 - x};
-    \addplot[fill=gray!50, opacity=0.5, domain=-0:1] {1 - x} \closedcycle;
-    \addplot[fill=gray!50, opacity=0.5, domain=-1:0, restrict y to domain=0:sqrt(1-x^2)] {ifthenelse(y >= 0, sqrt(1-x^2), nan)} \closedcycle;
+    \addplot[fill=gray!50, opacity=0.5, domain=0:1] {1 - x} \closedcycle;
+    \addplot[fill=gray!50, opacity=0.5, domain=90:180] ({cos(x)}, {sin(x)}) \closedcycle;
   \end{axis}
 \end{tikzpicture} $\\
-$ \int\limits_{0}^{1} dy \int\limits_{\sqrt{1-y^2}}^{1-y} f(x,y) dx $
-\text{по x разобьется на 2}\ $ \int\limits_{0}^{1} dx \int\limits_{0}^{1-x} f(x,y) dy +
-\int\limits_{-1}^{0} dx \int\limits_{0}^{\sqrt{1-x^2}} f(x,y) dy $
+$ \int\limits_{0}^{1} dy \int\limits_{\sqrt{1-y^2}}^{1-y} f(x,y) dx, $
+ $ \int\limits_{0}^{1} dx \int\limits_{0}^{1-x} f(x,y) dy +
+\int\limits_{-1}^{0} dx \int\limits_{0}^{\sqrt{1-x^2}} f(x,y) dy .$
+
+\text{\textbf{7.} }
 
 \end{document}
