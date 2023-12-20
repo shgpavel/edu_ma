@@ -19,18 +19,20 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{ragged2e}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{tikz}
 
 \usepackage{setspace}
-\setstretch{1.6}
+\setstretch{1.8}
 \everymath{\displaystyle}
 \usepackage{nopageno}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-\usepackage[a5paper, left=0.4cm, top=0.5cm, right=0.4cm, bottom=0.5cm]{geometry}
+\usepackage[a5paper, left=0.3cm, top=0.5cm, right=0.4cm, bottom=0.5cm]{geometry}
 
 \begin{document}
 
@@ -45,8 +47,7 @@ $ \sum\limits_{n = 1}^{\infty} \frac{1}{n^2} $
 \text{то исходный ряд}
 
 \text{по признаку Вейерштрасса равномерно сходится на}\
-$ \mathbb{R}. $~/.local/state/nvim/swap//%home%main%de
-v%git%edu_matan%practice%sec_course%thisem.tex.swp
+$ \mathbb{R}. $
 
 \text{\textbf{15.} Разложить в ряд Тейлора функцию}\
 $ \pi + \int\limits_{\frac{\pi}{2}}^{x} \frac{\cos^2{t}}{t - \frac{\pi}{2}}\ dt $
@@ -55,33 +56,19 @@ $ \pi + \int\limits_{\frac{\pi}{2}}^{x} \frac{\cos^2{t}}{t - \frac{\pi}{2}}\ dt 
 \text{и найти радиус сходимости полученного ряда.}
 
 $ f' = \frac{\cos^2{x}}{x - \displaystyle \frac{\pi}{2}} $
+$ = \sum\limits_{n = 1}^{\infty} -\frac{{(-4)}^{n} {\left(t\right)}^{2n - 1}}{2(2n)!} $
 
-$ \cos^2{x} =  1 + \sum\limits_{n = 1}^{\infty} \frac{{(-1)}^n (2)^{2n-1} {\left(x - 
-\displaystyle \frac{\pi}{2}\right)}^{2n}}{(2n)!} $
-$ \cos{2x} = \sum\limits_{n = 0}^{\infty} \frac{{(-1)}^n {(2x - \frac{\pi}{2})}^{2n} }{(2n)!};\ $
+$ f = \int\limits_{\frac{\pi}{2}}^{x} \sum\limits_{n = 1}^{\infty} 
+-\frac{{(-4)}^{n} {\left(x - \displaystyle \frac{\pi}{2} \right)}^{2n - 1}}{2(2n)!} dx $
+$ = \sum\limits_{n = 1}^{\infty} \int\limits_{\frac{\pi}{2}}^{x}
+-\frac{{(-4)}^{n} {\left(x - \displaystyle \frac{\pi}{2} \right)}^{2n - 1}}{2(2n)!} dx =$ 
 
-$ {(x - \frac{\pi}{2})}^{-1} =
-\sum\limits_{n = 1}^{\infty} -{\left(\frac{2}{\pi}\right)}^n {\left(x - \frac{\pi}{2}\right)}^{n - 1} $
+$ = \sum\limits_{n = 1}^{\infty} -\frac{(-1)^n 2^{2n} {\left(x - \displaystyle \frac{\pi}{2} \right)}^{2n}}{4n (2n)!}. $
 
-$ f = \int\limits_{1}^{x} \left(
-    \sum\limits_{n = 1}^{\infty} -{\left(\frac{\pi}{2}\right)}^n 
-    {\left(x - \frac{\pi}{2}\right)}^{1-n}
-    + \sum\limits_{n = 1}^{\infty} \frac{\pi^n {\left(x - 
-    \displaystyle \frac{\pi}{2}\right)}^{n+1}}{2 (2n)!}
-\right)dx $
-
-$ = \sum\limits_{n = 1}^{\infty} \int\limits_{1}^{x} -{\left(\frac{\pi}{2}\right)}^n 
-    {\left(x - \frac{\pi}{2}\right)}^{1-n} dx
-    + \sum\limits_{n = 1}^{\infty} \int\limits_{1}^{x} \frac{\pi^n {\left(x - 
-    \displaystyle \frac{\pi}{2}\right)}^{n+1}}{2 (2n)!} dx
-$
-
-$ =  \sum\limits_{n = 0}^{\infty} -{(\frac{\pi}{2})^{n+1}\
-\frac{ {(x - \frac{\pi}{2})}^{3n + 1} }{(3n + 1) ((2n)!)^2}}. $
-
-$ R = \lim\limits_{n \to \infty} \frac{{(\frac{\pi}{2})}^{n+1}\
-    \frac{1}{(3n + 1) ((2n)!)^2}}{{(\frac{\pi}{2})}^{n+2}\
-    \frac{1}{(3n + 4) ((2n + 2)!)^2}} = \infty $
+ $ R = \lim\limits_{n \to \infty} 
+\frac{-\frac{(-1)^n 2^{2n} {\left(x - \displaystyle \frac{\pi}{2} \right)}^{2n}}{4n (2n)!}}
+    {-\frac{(-1)^{n+1} 2^{2n+2} {\left(x - \displaystyle \frac{\pi}{2} \right)}^{2n+2}}{(4n + 4) (2n + 2)!}}
+ = \infty $
 
 \text{\textbf{1.} Найти пределы}\
 $ \lim\limits_{x \to 0} {\lim\limits_{y \to 0}{u}}, 
@@ -245,7 +232,26 @@ $ x^2 + y^2 + z^2 = 3a^2 $
 
 \text{и параболоидом} $ x^2 + y^2 = 2az,\ z \geq 0. $
 
-\newpage
+$ z = \frac{x^2 + y^2}{2a};\ z'_x = \frac{x}{a};\ z'_y = \frac{y}{a} $
+
+$ S_1 = \iint\limits_{\mathbb{D}} \sqrt{1 + z'_{x^2} + z'_{y^2}} dxdy  = 
+    \iint\limits_{\mathbb{D}} \sqrt{1 + \frac{x^2 + y^2}{a^2}} dxdy =
+    \iint\limits_{\mathbb{D}} \sqrt{\frac{a^2 + \rho^2}{a^2}} \rho d\varphi d\rho $
+
+
+$ \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{a\sqrt{2}} \sqrt{\frac{a^2 + \rho^2}{a^2}} \rho d\rho $
+$ = \int\limits_{0}^{2\pi} \frac{a^2}{3} \left(3\sqrt{3} - 1\right) d\varphi = \frac{2 \pi a^2}{3} \left(3\sqrt{3} - 1\right) $
+
+$ z = \pm \sqrt{3a^2 - x^2 - y^2};\ z'_x = \mp \frac{x}{\sqrt{3a^2 - x^2 - y^2}};\ 
+z'_y = \mp \frac{y}{\sqrt{3a^2 - x^2 - y^2}} $
+
+$ S_2 = \iint\limits_{\mathbb{D}} \sqrt{1 + \frac{x^2}{3a^2 - x^2 - y^2} + \frac{y^2}{3a^2 - x^2 - y^2}} dxdy = $
+$ \iint\limits_{\mathbb{D}} \frac{\sqrt{3}a \rho}{\sqrt{3a^2 - \rho^2}} d\rho$
+
+$ \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{\sqrt{2}a} \frac{\sqrt{3}a \rho}{\sqrt{3a^2 - \rho^2}} d\rho =  $
+$ \int\limits_{0}^{2\pi} \left(3 - \sqrt{3}\right) a\sqrt{a^2} d\varphi = 2 \pi a^2 \left(3 - \sqrt{3}\right) $
+
+\text{В итоге:}\ $ \frac{2 \pi a^2}{3} \left(3\sqrt{3} - 1\right) + 2 \pi a^2 \left(3 - \sqrt{3}\right) = \frac{16 \pi a^2}{3}. $
 
 \text{\textbf{8.} Найти момент инерции прямого круглого однородного цилиндра}
 
@@ -294,6 +300,6 @@ $ = \rho\int\limits_{0}^{H} \left( {\left( z - \frac{H}{2}\right)}^2 R^2 \pi +
 \frac{R^4}{4} \pi \right) dz = $
 
 $ = \rho \left[\frac{{\left( z - \frac{H}{2}\right)}^3 - R^2 \pi}{3} + \frac{R^4 \pi}{4} \right]_{0}^{H} $
-$ = \rho \pi R^2 H \left( \frac{H^2}{24} + \frac{R^2}{4} \right). $
+$ = \rho \pi R^2 H \left( \frac{H^2}{12} + \frac{R^2}{4} \right). $
 
 \end{document}
