@@ -22,10 +22,10 @@
 \usepackage{ragged2e}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-
+\usepackage{tikz}
 
 \usepackage{setspace}
-\setstretch{1.7}
+\setstretch{1.4}
 \everymath{\displaystyle}
 \usepackage{nopageno}
 \usepackage[utf8]{inputenc}
@@ -45,13 +45,43 @@ $ \sum\limits_{n = 1}^{\infty} \frac{1}{n^2} $
 \text{то исходный ряд}
 
 \text{по признаку Вейерштрасса равномерно сходится на}\
-$ \mathbb{R}. $
+$ \mathbb{R}. $~/.local/state/nvim/swap//%home%main%de
+v%git%edu_matan%practice%sec_course%thisem.tex.swp
 
 \text{\textbf{15.} Разложить в ряд Тейлора функцию}\
-$ \pi + \int\limits_{\frac{\pi}{2}}^{x} \frac{\cos{t}^2}{t - \frac{\pi}{2}}\ dt $
+$ \pi + \int\limits_{\frac{\pi}{2}}^{x} \frac{\cos^2{t}}{t - \frac{\pi}{2}}\ dt $
 \text{в окрестности точки}\ $ x_0 = \frac{\pi}{2} $
 \indent
 \text{и найти радиус сходимости полученного ряда.}
+
+$ f' = \frac{\cos^2{x}}{x - \displaystyle \frac{\pi}{2}} $
+
+$ \cos^2{x} =  1 + \sum\limits_{n = 1}^{\infty} \frac{{(-1)}^n (2)^{2n-1} {\left(x - 
+\displaystyle \frac{\pi}{2}\right)}^{2n}}{(2n)!} $
+$ \cos{2x} = \sum\limits_{n = 0}^{\infty} \frac{{(-1)}^n {(2x - \frac{\pi}{2})}^{2n} }{(2n)!};\ $
+
+$ {(x - \frac{\pi}{2})}^{-1} =
+\sum\limits_{n = 1}^{\infty} -{\left(\frac{2}{\pi}\right)}^n {\left(x - \frac{\pi}{2}\right)}^{n - 1} $
+
+$ f = \int\limits_{1}^{x} \left(
+    \sum\limits_{n = 1}^{\infty} -{\left(\frac{\pi}{2}\right)}^n 
+    {\left(x - \frac{\pi}{2}\right)}^{1-n}
+    + \sum\limits_{n = 1}^{\infty} \frac{\pi^n {\left(x - 
+    \displaystyle \frac{\pi}{2}\right)}^{n+1}}{2 (2n)!}
+\right)dx $
+
+$ = \sum\limits_{n = 1}^{\infty} \int\limits_{1}^{x} -{\left(\frac{\pi}{2}\right)}^n 
+    {\left(x - \frac{\pi}{2}\right)}^{1-n} dx
+    + \sum\limits_{n = 1}^{\infty} \int\limits_{1}^{x} \frac{\pi^n {\left(x - 
+    \displaystyle \frac{\pi}{2}\right)}^{n+1}}{2 (2n)!} dx
+$
+
+$ =  \sum\limits_{n = 0}^{\infty} -{(\frac{\pi}{2})^{n+1}\
+\frac{ {(x - \frac{\pi}{2})}^{3n + 1} }{(3n + 1) ((2n)!)^2}}. $
+
+$ R = \lim\limits_{n \to \infty} \frac{{(\frac{\pi}{2})}^{n+1}\
+    \frac{1}{(3n + 1) ((2n)!)^2}}{{(\frac{\pi}{2})}^{n+2}\
+    \frac{1}{(3n + 4) ((2n + 2)!)^2}} = \infty $
 
 \text{\textbf{1.} Найти пределы}\
 $ \lim\limits_{x \to 0} {\lim\limits_{y \to 0}{u}}, 
@@ -66,7 +96,7 @@ $ \lim\limits_{y \to 0} {\lim\limits_{x \to 0}}{u}\ \nexists$
 $ \lim\limits_{{\substack{x \to 0 \\ y \to 0}}}{u} = 0 $
 \text{т. к.}\ $\lim\limits_{\substack{x \to 0 \\ y \to 0}}{ x + y\sin{\frac{1}{x}}} \sim \lim\limits_{\substack{x \to 0 \\ y \to 0}} {y\sin{\frac{1}{x}}} = 0 $
 
-\text{(произведение ограниченной функции на бесконечно малое).}\\
+\text{(ограниченная функция на б. м.)}
 
 \text{\textbf{2.} Найти}\
 $ xz \frac{\partial z}{\partial x} 
@@ -113,11 +143,13 @@ $ \frac{1}{4\lambda^2} + \frac{1}{4\lambda^2} - \frac{1}{a^2} = 0,\
 $ L''_{xx}  = \frac{2x + 6\lambda}{x^4},\ L''_{yy} = \frac{2y + 6\lambda}{y^4},\
 L''_{\lambda \lambda} = 0,\ L''_{x \lambda} = \frac{-2}{x^3},\ L''_{y \lambda}
 = \frac{-2}{y^3} $\\
+\indent
 $ \mathcal{H} = \begin{vmatrix}
     0 & \frac{-2}{x^3} & \frac{-2}{y^3}\\
     \frac{-2}{x^3} & \frac{2x + 6\lambda}{x^4} & 0 \\
     \frac{-2}{y^3} & 0 & \frac{2y + 6\lambda}{y^4}\\
 \end{vmatrix} $\\
+
 \text{в точке}\ $ (-a\sqrt{2}, -a\sqrt{2}),\ \mathcal{H} = -\frac{1}{2\sqrt{2}a^9}; $
 \text{в точке}\ $ (a\sqrt{2}, a\sqrt{2}),\ \mathcal{H} = \frac{1}{2\sqrt{2}a^9}. $
 
@@ -132,6 +164,45 @@ $ \mathcal{H} = \begin{vmatrix}
 \text{\textbf{4.} Оператор Лапласа}\
 $ \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} $
 \text{преобразовать к полярным координатам.}
+
+$ \begin{cases}
+    \rho = \sqrt{x^2 + y^2}\\
+    \varphi = \arctg(\frac{y}{x})\\
+    w = u
+\end{cases} $
+
+$ \begin{cases}
+    d\rho = \frac{x}{\sqrt{x^2 + y^2}} dx + \frac{y}{\sqrt{x^2 + y^2}} dy\\
+    d\varphi = \frac{x}{x^2 + y^2} dy - \frac{y}{x^2 + y^2} dx\\
+    dw = du
+\end{cases} $
+\indent
+$ dw = w'_{\rho} d\rho + w'_{\varphi} d\varphi = u'_x dx + u'_y dy $
+
+$ \begin{cases}
+    u'_x = \frac{x}{\sqrt{x^2 + y^2}} w'_{\rho} - \frac{y}{x^2 + y^2} w'_{\varphi}\\
+    u'_y = \frac{y}{\sqrt{x^2 + y^2}} w'_{\rho} + \frac{x}{x^2 + y^2} w'_{\varphi}
+\end{cases} $
+$ \implies $
+$ \begin{cases}
+    u'_x = \cos{\varphi} w'_{\rho} - \frac{\sin{\varphi}}{\rho} w'_{\varphi}\\
+    u'_y = \sin{\varphi} w'_{\rho} + \frac{\cos{\varphi}}{\rho} w'_{\varphi}
+\end{cases} $
+
+$ u''_{x^{2}} = (\cos{\varphi} w'_{\rho} - \frac{\sin{\varphi}}{\rho} w'_{\varphi})'_x
+ = -\sin{\varphi} \varphi'_x w'_{\rho} + \cos{\varphi} w''_{\rho^2} \rho'_x
+ - \frac{\cos{\varphi} \varphi'_x}{\rho} w'_{\varphi}
+ + \frac{\sin{\varphi}}{\rho^2} \rho'_x w'_{\varphi } $
+
+$ - \frac{\sin{\varphi}}{\rho} w''_{\varphi^2} \varphi'_x. $
+
+$ u''_{y^{2}} = (\sin{\varphi} w'_{\rho} + \frac{\cos{\varphi}}{\rho} w'_{\varphi})'_y
+ = -\cos{\varphi} \varphi'_y w'_{\rho} + \sin{\varphi} w''_{\rho^2} \rho'_y
+ - \frac{\sin{\varphi}}{\rho} \varphi'_y w'_{\varphi}
+ - \frac{\cos{\varphi}}{\rho^2} \rho'_y w'_{\varphi} $
+
+$ + \frac{\cos{\varphi}}{\rho} w''_{\varphi^2} \varphi'_y. $
+
 
 \text{\textbf{5.} Исследовать на равномерную сходимость интеграл}\
 $ \int\limits_{1}^{+\infty} \frac{\ln^{3}{x}}{x^2 + \alpha^4} dx $
@@ -155,6 +226,7 @@ $ \iint\limits_{\mathbb{D}} f(x,y)\ dx dy $
 
 \text{в том и другом порядке, if}\
 $ \mathbb{D} = \{x^2 + y^2 \leq 1,\ x + y - 1 \leq 0,\ y \geq 0 \}. $\\
+
 $ \begin{tikzpicture}
   \begin{axis}[axis equal, axis lines=middle, xlabel={$x$}, ylabel={$y$}, domain=-1.2:1.2, samples=100]
     \addplot[draw=black, thick, fill=none, draw opacity=1, domain=0:360] ({cos(x)}, {sin(x)});
@@ -163,10 +235,48 @@ $ \begin{tikzpicture}
     \addplot[fill=gray!50, opacity=0.5, domain=90:180] ({cos(x)}, {sin(x)}) \closedcycle;
   \end{axis}
 \end{tikzpicture} $\\
-$ \int\limits_{0}^{1} dy \int\limits_{\sqrt{1-y^2}}^{1-y} f(x,y) dx, $
+\indent
+$ \int\limits_{0}^{1} dy \int\limits_{-\sqrt{1-y^2}}^{1-y} f(x,y) dx, $
  $ \int\limits_{0}^{1} dx \int\limits_{0}^{1-x} f(x,y) dy +
 \int\limits_{-1}^{0} dx \int\limits_{0}^{\sqrt{1-x^2}} f(x,y) dy .$
 
-\text{\textbf{7.} }
+\text{\textbf{7.} Вычислить полную поверхность тела, ограниченного сферой}\
+$ x^2 + y^2 + z^2 = 3a^2 $
+
+\text{и параболоидом} $ x^2 + y^2 = 2az,\ z \geq 0. $
+
+\newpage
+
+\text{\textbf{8.} Найти момент инерции прямого круглого однородного цилиндра}
+
+\text{(радиус основания $ R $, высота $ H $) относительно диаметра его среднего сечения.}
+
+$
+\begin{tikzpicture}
+\begin{axis}[
+    hide axis,
+    view={130}{30},
+    axis equal,
+    ticks=none
+]
+
+\addplot3 [surf, opacity=0.6, shader=flat, samples=50, domain=0:360, colormap/blackwhite, y domain=0:2] ({2*cos(x)}, {2*sin(x)}, y);
+
+  
+
+\draw (axis cs: 0,0,1) circle [radius=2];
+
+\draw[dashed] (axis cs: 0,0,1) -- (axis cs: 4,0,1);
+\draw[dashed] (axis cs: 0,0,1) -- (axis cs: -4,0,1);
+
+\filldraw (axis cs: 0,0,1) circle (2pt) node[below] {$O$};
+\filldraw (axis cs: -3.5,0,1) circle (2pt) node[below] {$O'$};
+
+\draw (axis cs: 0,0,0) circle [radius=2];
+\draw (axis cs: 0,0,2) circle [radius=2];
+
+\end{axis}
+\end{tikzpicture}  $
+
 
 \end{document}
