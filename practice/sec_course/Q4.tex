@@ -25,7 +25,7 @@
 \usepackage{tikz}
 
 \usepackage{setspace}
-\setstretch{1.4}
+\setstretch{1.6}
 \everymath{\displaystyle}
 \usepackage{nopageno}
 \usepackage[utf8]{inputenc}
@@ -189,20 +189,20 @@ $ \begin{cases}
     u'_y = \sin{\varphi} w'_{\rho} + \frac{\cos{\varphi}}{\rho} w'_{\varphi}
 \end{cases} $
 
-$ u''_{x^{2}} = (\cos{\varphi} w'_{\rho} - \frac{\sin{\varphi}}{\rho} w'_{\varphi})'_x
- = -\sin{\varphi} \varphi'_x w'_{\rho} + \cos{\varphi} w''_{\rho^2} \rho'_x
- - \frac{\cos{\varphi} \varphi'_x}{\rho} w'_{\varphi}
- + \frac{\sin{\varphi}}{\rho^2} \rho'_x w'_{\varphi } $
+$ u''_{x^{2}} = \left(\cos{\varphi} w'_{\rho} - \frac{\sin{\varphi}}{\rho} w'_{\varphi}\right)'_\rho
+\rho'_x + \left( \cos{\varphi} w'_{\rho} - \frac{\sin{\varphi}}{\rho} w'_{\varphi}\right)'_\varphi \varphi'_x = $
 
-$ - \frac{\sin{\varphi}}{\rho} w''_{\varphi^2} \varphi'_x. $
+$ = w''_{\rho^2}\cos^2{\varphi} - 2 w''_{\rho\varphi} \frac{\sin{\varphi} \cos{\varphi}}{\rho} + $
+$ w''_{\varphi^2} \frac{\sin^2{\varphi}}{\rho^2} $
+$ + w'_\rho \frac{\sin^2{\varphi}}{\rho} + w'_\varphi \frac{\sin{\varphi}\cos{\varphi}}{\rho^2} $
 
-$ u''_{y^{2}} = (\sin{\varphi} w'_{\rho} + \frac{\cos{\varphi}}{\rho} w'_{\varphi})'_y
- = -\cos{\varphi} \varphi'_y w'_{\rho} + \sin{\varphi} w''_{\rho^2} \rho'_y
- - \frac{\sin{\varphi}}{\rho} \varphi'_y w'_{\varphi}
- - \frac{\cos{\varphi}}{\rho^2} \rho'_y w'_{\varphi} $
+$ u''_{y^{2}} = \left(\sin{\varphi} w'_{\rho} + \frac{\cos{\varphi}}{\rho} w'_{\varphi}\right)'_\rho \rho'_y $
+$ + \left(\sin{\varphi} w'_{\rho} + \frac{\cos{\varphi}}{\rho} w'_{\varphi}\right)'_\varphi \varphi'_y = $
 
-$ + \frac{\cos{\varphi}}{\rho} w''_{\varphi^2} \varphi'_y. $
+$ = w''_{\rho^2}\sin^2{\varphi} + 2 w''_{\rho\varphi} \frac{\sin{\varphi} \cos{\varphi}}{\rho} + w''_{\varphi^2}
+\frac{\cos^2{\varphi}}{\rho^2} + w'_\rho \frac{\cos^2{\varphi}}{\rho} - w'_\varphi \frac{\sin{\varphi}\cos{\varphi}}{\rho^2} $
 
+$ u''_{x^2} + u''_{y^2} = w''_{\rho^2} + \frac{1}{\rho} w'_\rho + \frac{1}{\rho^2} w''_{\varphi^2}. $
 
 \text{\textbf{5.} Исследовать на равномерную сходимость интеграл}\
 $ \int\limits_{1}^{+\infty} \frac{\ln^{3}{x}}{x^2 + \alpha^4} dx $
@@ -278,5 +278,22 @@ $
 \end{axis}
 \end{tikzpicture}  $
 
+$ d^2 = {\left( z - \frac{R}{2}\right)}^2 + h^2;\ $
+$ h = r\sin{\varphi};\ $
+$ d^2 = {\left( z - \frac{H}{2}\right)}^2 + r^2 \sin^2{\varphi} $
+
+$ I = \rho\int\limits_{0}^{H}dz \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{R} d^2r dr $
+$ = \rho\int\limits_{0}^{H}dz \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{R} \left({\left( z - \frac{H}{2}\right)}^2 r + r^3\sin^2\varphi \right) dr = $
+
+$ = \rho\int\limits_{0}^{H}dz \int\limits_{0}^{2\pi} \left( \frac{{\left( z - \frac{H}{2}\right)}^2 R^2}{2} + 
+\frac{R^4 \sin^2{\varphi}}{4} \right) d\varphi = $
+
+$ = \rho\int\limits_{0}^{H}dz \left[ \frac{{\left( z - \frac{H}{2}\right)}^2 R^2}{2} \varphi + 
+\frac{R^4}{8} \left(\varphi - \frac{\sin{2\varphi}}{2}\right) \right]_{0}^{2\pi} $
+$ = \rho\int\limits_{0}^{H} \left( {\left( z - \frac{H}{2}\right)}^2 R^2 \pi + 
+\frac{R^4}{4} \pi \right) dz = $
+
+$ = \rho \left[\frac{{\left( z - \frac{H}{2}\right)}^3 - R^2 \pi}{3} + \frac{R^4 \pi}{4} \right]_{0}^{H} $
+$ = \rho \pi R^2 H \left( \frac{H^2}{24} + \frac{R^2}{4} \right). $
 
 \end{document}
