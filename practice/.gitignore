@@ -1,6 +1,5 @@
-semz.aux
-semz.fdb_latexmk
-semz.fls
-semz.log
-semz.pdf
-semz.synctex.gz
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
