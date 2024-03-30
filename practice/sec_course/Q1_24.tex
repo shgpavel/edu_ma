@@ -1,0 +1,97 @@
+\documentclass{report}
+
+\def\letus{%
+    \mathord{\setbox0=\hbox{$\exists$}%
+             \hbox{\kern 0.125\wd0%
+                   \vbox to \ht0{%
+                      \hrule width 0.75\wd0%
+                      \vfill%
+                      \hrule width 0.75\wd0}%
+                   \vrule height \ht0%
+                   \kern 0.125\wd0}%
+           }%
+}
+
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+
+\usepackage{setspace}
+\setstretch{1.8}
+\everymath{\displaystyle}
+\usepackage{nopageno}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[a5paper, left=0.3cm, top=0.5cm, right=0.4cm, bottom=0.5cm]{geometry}
+
+\begin{document}
+
+\text{\textbf{1.} Найти массу окружности}\
+$ x^2 + y^2 = ax, $
+\text{если плотность в каждой ее точке}\\
+$ \rho = \sqrt{x^2 + y^2}. $
+
+
+$ x = \rho cos{\varphi},\ y = \rho sin{\varphi} $
+$ \rho^2 = a\rho\cos{\varphi} \implies \rho = a\cos{\varphi} $
+
+$ m = \int\limits_{3\pi/2}^{5\pi/2} a\cos{\varphi} 
+\sqrt{(a\cos{\varphi})^2 + (-a\sin{\varphi})^2}\ d\varphi 
+= \int\limits_{3\pi/2}^{5\pi/2} a^2\cos{\varphi}\ d\varphi $
+
+$ = a^2 [\sin{\varphi}]_{3\pi/2}^{5\pi/2}
+= 2a^2. $
+
+\text{\textbf{2.} Вычислить интеграл}\
+$ \int\limits_{L} (2a - y)\ dx + (y - a)\ dy, $
+\text{где}\ $ L $\ {-- дуга циклоиды}
+
+$ x = a(t - \sin{t}),\ y = a(1 - \cos{t}), 0 \leq t \leq 2\pi, $
+
+\text{пробегаемая в направлении возрастания параметра}\ $ t. $
+
+$ dx = a (1 - \cos{t}) dt,\ dy = a\sin{t} dt $
+
+$ \int\limits_{0}^{2\pi} (a^2(1 - \cos^2{t}) - a^2\cos{t}\sin{t}) dt
+= a^2\int\limits_{0}^{2\pi} \sin^2{t} - \sin{t}\cos{t}\ dt $
+
+$ = a^2\left[\frac{t}{2} - \frac{\sin{2t}}{4} - \frac{\sin^2{t}}{2}\right]_{0}^{2\pi} = a^2\pi. $
+
+\text{\textbf{3.} С помощью формулы Грина вычислить}\
+$ I = \int\limits_{L} \frac{x}{y}\ dy - \ln{y}\ dx, $
+\text{где}\ $ L $\ \text{-- ломаная}\
+
+$ ABCD,\ A(1; 1),\ B(2; 1),\ C(3; 2),\ D(1; 2). $
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[scale=1.5]
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (2,1);
+    \coordinate (C) at (3,2);
+    \coordinate (D) at (1,2);
+        
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+        
+    \foreach \point/\position in {A/below, B/below, C/above, D/above} {
+    \fill (\point) circle (1.5pt);
+    \node[\position=3pt] at (\point) {$\point$};
+    }
+  \end{tikzpicture}
+\end{figure}
+
+$ \frac{\partial P}{\partial y} = -\frac{1}{y},\
+\frac{\partial Q}{\partial x} = \frac{1}{y}\ $
+$ I = \iint\limits_{\varsigma} \frac{2}{y}\ d\varsigma 
+= \int\limits_{1}^{2} \frac{2}{y}\ dy \int\limits_{1}^{3}\ dx
+= 4\ln{2} $
+
+\end{document}
